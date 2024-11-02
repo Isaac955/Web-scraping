@@ -8,7 +8,7 @@
 #### - `BeautifulSoup4` pour le parsing HTML
 
 ## 📂 Structure du Projet : 
-#### - `scraper.py` : Script principal pour l’extraction des données.
+#### - `scraper.py` : Script Python principal pour l’extraction des données.
 #### - `portfolio.html` : Page HTML sauvegardée localement
 #### - `projects.xlsx` : Fichier généré contenant les données extraites sous format Excel.
 
