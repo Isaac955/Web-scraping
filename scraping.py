@@ -39,7 +39,7 @@ if response.status_code == 200:
         titre = project.find("h4").text
         description = project.find("p", class_="font-weight-normal").text
         lien = project.find("a")["href"]
-        print(f"Languages: {titre}\nDescription: {description}\Lien: {lien}\n")
+        print(f"Languages : {titre}\nDescription : {description}\nLien : {lien}\n")
 
 else:
     print("Erreur", response.status_code)
