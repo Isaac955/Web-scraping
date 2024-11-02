@@ -6,6 +6,7 @@ Created on Fri Nov  1 21:02:45 2024
 """
 import requests
 from bs4 import BeautifulSoup
+import pandas as pd
 
 
 
@@ -34,15 +35,20 @@ if response.status_code == 200:
    # for e_aboutme in e_aboutme:
        # print(e_aboutme.text)
     #Projets
-    projects = soup.find_all("div", class_="portfolio-card")
-    for project in projects:
-        titre = project.find("h4").text
-        description = project.find("p", class_="font-weight-normal").text
-        lien = project.find("a")["href"]
-        print(f"Languages : {titre}\nDescription : {description}\nLien : {lien}\n")
+    def get_projects(url):
+        resultat=[]
+        projects = soup.find_all("div", class_="portfolio-card")
+        for project in projects:
+            titre = project.find("h4").text
+            description = project.find("p", class_="font-weight-normal").text
+            lien = project.find("a")["href"]
+            resultat.append({"Langages": titre,"Description": description,"Lien": lien })
+        return resultat
+    print (get_projects(url))
+data = get_projects(url)
+df = pd.DataFrame(data)
+df.to_excel("projects.xlsx")
+print("Export terminé")
 
-else:
-    print("Erreur", response.status_code)
-#print("end")
 
 
