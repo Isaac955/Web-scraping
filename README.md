@@ -6,6 +6,7 @@
 ## 📚 Bibliothèques nécessaires : 
 #### - `requests` pour l'envoi des requêtes HTTP
 #### - `BeautifulSoup4` pour le parsing HTML
+#### - `pandas` : pour exporter les données en fichiers Excel 
 
 ## 📂 Structure du Projet : 
 #### - `scraper.py` : Script Python principal pour l’extraction des données.
